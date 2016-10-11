@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
     tests.basic
-    ~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~
     The basic functionality.
     :copyright: (c) 2016 by Zhe Wang.
     :license: BSD, see LICENSE for more details.
