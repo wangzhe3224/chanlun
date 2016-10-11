@@ -19,9 +19,9 @@ from __future__ import print_function
 
 class Bar(object):
     """"""
-    __slots__ = ['date', 'open', 'high', 'low', 'close', 'vol', 'freq', 'contains']
+    __slots__ = ['date', 'open', 'high', 'low', 'close', 'adj_close', 'vol', 'freq', 'contains']
     
-    def __init__(self, timestamp, open_p, high, low, close, vol, freq='5M'):
+    def __init__(self, timestamp, open_p, high, low, close, vol, adj_close=None, freq='5M'):
         """
 
         :param timestamp: datetime.datetime.
@@ -43,6 +43,7 @@ class Bar(object):
         self.high = high
         self.low = low
         self.close = close
+        self.adj_close = adj_close
         self.vol = vol  # volume
         self.freq = freq
 
@@ -79,6 +80,12 @@ class Bar(object):
         obj = self.__init__(open_p=open_p, close=close, high=high, low=low, vol=vol, timestamp=self.date)
 
         return obj
+
+    def __str__(self):
+
+        __str = '\nopen: %f\nhigh: %f\nlow: %f\nclose: %f\n' % (self.open, self.high, self.low, self.close)
+
+        return __str
 
 
 class Fractal(object):
